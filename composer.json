@@ -13,11 +13,11 @@
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         },
-        "commmerce_api_graphpql": {
+        "commmerce_api_graphql": {
             "type": "package",
             "package": {
-                "name": "trentcrawford/commerce_api_graphpql",
-                "version": "1.0",
+                "name": "trentcrawford/commerce_api_graphql",
+                "version": "1.0.0.0",
                 "type": "drupal-module",
                 "source": {
                     "url": "https://github.com/trent-crawford/commerce-api-graphql.git",
@@ -39,6 +39,7 @@
         "drupal/inline_entity_form": "^1.0@RC",
         "drush/drush": "^11.2",
         "trentcrawford/commerce_api_graphpql": "^1.0",
+        "trentcrawford/commerce_api_graphql": "^1.0",
         "vlucas/phpdotenv": "^2.6"
     },
     "conflict": {
