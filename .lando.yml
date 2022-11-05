@@ -5,6 +5,7 @@ config:
 
 services:
   appserver:
+    xdebug: debug
     config:
       php: .lando.php.ini
     run_as_root:
