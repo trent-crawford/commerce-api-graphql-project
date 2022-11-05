@@ -8,12 +8,25 @@
         "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
         "chat": "https://www.drupal.org/node/314178"
     },
-    "repositories": [
-        {
+    "repositories": {
+        "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        "commmerce_api_graphpql": {
+            "type": "package",
+            "package": {
+                "name": "trentcrawford/commerce_api_graphpql",
+                "version": "1.0",
+                "type": "drupal-module",
+                "source": {
+                    "url": "https://github.com/trent-crawford/commerce-api-graphql.git",
+                    "type": "git",
+                    "reference": "main"
+                }
+            }
         }
-    ],
+   },
     "require": {
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
@@ -25,6 +38,7 @@
         "drupal/core-recommended": "^9.4",
         "drupal/inline_entity_form": "^1.0@RC",
         "drush/drush": "^11.2",
+        "trentcrawford/commerce_api_graphpql": "^1.0",
         "vlucas/phpdotenv": "^2.6"
     },
     "conflict": {

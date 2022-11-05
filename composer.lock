@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c02a60c40f6efc67e19ea9d3a8bc466b",
+    "content-hash": "28f321e5ceedc18141c6f4cf30df5c67",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7636,6 +7636,16 @@
                 }
             ],
             "time": "2022-08-02T15:47:23+00:00"
+        },
+        {
+            "name": "trentcrawford/commerce_api_graphpql",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/trent-crawford/commerce-api-graphql.git",
+                "reference": "main"
+            },
+            "type": "drupal-module"
         },
         {
             "name": "twig/twig",
