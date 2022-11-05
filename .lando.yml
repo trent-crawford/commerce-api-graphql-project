@@ -1,0 +1,40 @@
+name: commerce-api
+recipe: drupal9
+config:
+  webroot: docroot
+
+services:
+  appserver:
+    config:
+      php: .lando.php.ini
+    run_as_root:
+      # This adds node in appserver to simplify our initial blt setup and build.
+      - curl -sL https://deb.nodesource.com/setup_14.x | bash -
+      - apt install -y nodejs
+    overrides:
+      environment:
+        SIMPLETEST_DB: "sqlite://localhost/:memory:"
+        # Support debugging Drush with XDEBUG.
+        PHP_IDE_CONFIG: "serverName=appserver"
+        DRUSH_OPTIONS_URI: "https://commerce-api.lndo.site"
+        SIMPLETEST_BASE_URL: "https://commerce-api.lndo.site"
+
+tooling:
+  npm:
+    service: node
+  node:
+    service: node
+  phpunit-local:
+    service: appserver
+    description: Runs phpunit with config at web/sites/default/local.phpunit.xml
+    cmd: /app/vendor/bin/phpunit -v -c /app/web/sites/default/local.phpunit.xml
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug for apache.
+    cmd: docker-php-ext-enable xdebug && /etc/init.d/apache2 reload
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug for apache.
+    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && /etc/init.d/apache2 reload
+    user: root
