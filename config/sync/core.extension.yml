@@ -12,6 +12,7 @@ module:
   comment: 0
   commerce: 0
   commerce_api: 0
+  commerce_api_graphql: 0
   commerce_cart: 0
   commerce_checkout: 0
   commerce_log: 0
